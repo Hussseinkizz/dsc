@@ -1,0 +1,126 @@
+h2 {
+  text-align: center;
+  font-size: x-large;
+  color: white;
+  background-color: black;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+img {
+  margin-left: 50px;
+  width: 250px;
+}
+.section {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.sub:hover {
+  background-color: rgb(87, 87, 247);
+  opacity: 1;
+  color: white;
+}
+
+.sub {
+  border: 1px solid green;
+  align-content: center;
+  justify-content: space-between;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  background-color: white;
+}
+.main {
+  display: flex;
+  flex-direction: row;
+}
+
+.event-wrapper {
+  display: grid;
+  background-color: black;
+
+  grid-template-rows: auto auto;
+}
+.next {
+  color: white;
+  justify-content: center;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.2rem;
+  margin-left: 100px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  background-color: black;
+}
+p {
+  text-align: center;
+}
+
+.past {
+  background-color: white;
+  color: black;
+}
+
+.list {
+  color: white;
+}
+ul {
+  list-style: none;
+}
+.section1 {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  margin-bottom: 20px;
+}
+.style {
+  color: blue;
+}
+.style:hover {
+  opacity: 3;
+  color: white;
+}
+
+/* Added By Kizz - Register Form Modal */
+.event-wrapper {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+}
+
+.register-form.modal {
+  width: 100%;
+  min-height: 100%;
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: #00000056;
+}
+
+.register-form.modal-body {
+  background: #fff;
+  padding-block: 10vh; /* could have a better fix! */
+  width: 100%;
+  margin-inline: auto;
+  height: 100%;
+}
+
+.register-form.modal-body h1 {
+  text-align: center;
+}
+
+.register-form.modal-body .close {
+  cursor: pointer;
+  font-size: 2rem;
+}

@@ -1,0 +1,583 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+.myForm {
+ 
+  width: 100%;
+}
+.myForm div{
+
+  width: 100%;
+}
+label{
+  
+  display: block;
+}
+
+.container {
+  background: url("./images/bg.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+.container2 {
+    background: url("./images/aboutus2.jpg");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    width: 100%;
+    height: 40vh;
+    top: 0px;
+    position: absol;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+.container22 {
+  background: url("./images/contact.jpg");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  height: 40vh;
+  top: 0px;
+  position: absol;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+/* .container3 {
+  background: url("./images/contact.jpg");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+} */
+.container5 {
+  background: url("./images/contactperson.JPG");
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 40vh;
+  position: relative;
+  overflow: hidden;
+  top: 0px;
+  display: flex;
+  justify-content: center;
+}
+.container4 {
+  background-color: rgb(250, 250, 249);
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 27vh;
+  position:relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  padding: 0px;
+}
+.container5::after {
+  content: "";
+  background: rgba(19, 151, 212, 0.3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+/* .container3::after {
+  content: "";
+  background: rgba(19, 151, 212, 0.3);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+} */
+.container2::after {
+  content: "";
+  background: rgba(19, 151, 212, 0.1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.container22::after {
+  content: "";
+  background: rgba(19, 151, 212, 0.1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+.container::after {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+.page-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  position: relative;
+  z-index: 2;
+}
+
+
+.margin {
+  /* background-color: rgb(252, 252, 251); */
+  height: 20px;
+  margin-top: 0px;
+}
+.templatecolum2 {
+  display: flex;
+  gap:2rem;
+  width: 60%;
+  margin: 25PX auto;
+}
+.templatecolum2 div
+.templatecolum2 img {
+  width:90%;
+  border: 5px solid rgb(196, 222, 196);
+
+
+}
+.conim span{
+  color: white;
+  border-right: 2px solid;
+  margin: 0 3px;
+
+}
+.techworl{
+  color: rgb(236, 224, 224);
+}
+.frame iframe{
+  width: 100%;
+  background-color: yellow;
+}
+.row4 {
+  display: flex;
+  /* justify-content: center; */
+  width: 80%;
+  margin: 20px auto;
+  
+  gap: 3rem;
+  padding: 8px;
+}
+.outlined2 {
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+.software {
+  width: 80%;
+  margin: 20px auto;
+}
+.software img {
+  display: block;
+  width: 100%;
+  /* height: 1%; */
+}
+.software h1{
+  background-color: tomato;
+  color: white;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.templatecolum3 {
+  display: flex;
+  margin: 40px 200px;
+  gap:2rem;
+  /* background-color: yellow; */
+  
+}
+.templatecolum3  img {
+  width: 30%;
+  border: 5px solid rgb(242, 187, 214);
+}
+.pricing {
+  border: 2px solid rgb(241, 45, 45);
+  padding: 5px;
+    
+}
+.pricing h3{
+  background-color: rgb(241, 45, 45);;
+  color:white;
+  font-size: 18px;
+  font-weight: 0px;
+}
+.templatecolum3 {
+  border: 4px solid rgb(241, 232, 232);
+  margin: bottom 2px;
+  margin-top: 40px;
+}
+
+.official {
+  background-color: rgb(107, 141, 119);
+  color: rgb(251, 245, 245);
+  display: inline;
+ font-size: 16px;
+ 
+}
+.row4 div{
+ 
+  width: 100%;
+}
+.form-order{
+  display: flex;
+  /* gap:20px; */
+  background-color: rgb(248, 232, 223);
+  width: 100%;
+}
+.form-order h4{
+  margin: 20px;
+
+}
+textarea{
+  display: block;
+    margin: 10px 0px;
+    width: 100%;
+
+}
+.googlemap {
+  width: 100%;
+  height: 100%;
+}
+.form-order div{
+  width: 100%;
+}
+input{
+  display: block;
+  margin: 10px 0px;
+  width: 100%;
+  height: 30px;
+}
+
+@media screen and (max-width: 1200px) {
+  .templatecolum2 {
+    display: grid;
+    margin: 20px auto;
+    gap: 2rem;
+    width: 80%;
+
+  }
+    textarea {
+      display: block;
+      margin: 0px 0px;
+      width: 100%;
+  
+    }
+  .column {
+    margin-bottom: 30px;
+    width: 100%;
+    display: block;
+    padding: 8px;
+  }
+}
+@media screen and (max-width: 1160px) {
+  .templatecolum3 {
+    display: flex;
+    margin: 20px 20px;
+    gap: 2rem;
+
+  }
+
+  .templatecolum3 img {
+    width: 30%;
+    border: 5px solid rgb(242, 187, 214);
+  }
+
+  .pricing {
+    border: 2px solid rgb(241, 45, 45);
+
+  }
+
+  .pricing h3 {
+    background-color: rgb(241, 45, 45);
+    ;
+    color: white;
+    font-size: 18px;
+    font-weight: 0px;
+  }
+
+  .templatecolum3 {
+    border: 4px solid rgb(241, 232, 232);
+    margin: bottom 2px;
+  }
+
+  .official {
+    background-color: rgb(107, 141, 119);
+    color: rgb(251, 245, 245);
+    display: inline;
+    font-size: 16px;
+
+  }
+
+
+
+
+
+}
+
+
+
+
+
+
+@media screen and (max-width: 600px) {
+  .row4 {
+      display: grid;
+      justify-content: center;
+      width: 80%;
+      margin: 20px auto;
+  
+      gap: 3rem;
+    }
+
+    .templatecolum3 {
+          border: 4px solid rgb(241, 232, 232);
+          margin: bottom 2px;
+          margin-top: 40px;
+        }
+  .outlined2 {
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    font-size: 25px;
+  }
+  .container2 {
+      background: url("./images/aboutusmobile.jpg");
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      width: 100%;
+      height: 50vh;
+      top: 0px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      z-index: -1;
+      justify-content: center;
+    }
+        .container22 {
+          background: url("./images/contact.jpg");
+          background-attachment: fixed;
+          background-position: center;
+          background-size: cover;
+          width: 100%;
+          height: 50vh;
+          top: 0px;
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          z-index: -1;
+          justify-content: center;
+        }
+                .container22 h1 {
+                  font-size: 23px;
+                }
+    .container2 h1{
+      font-size: 23px;
+    }
+    .conim h1 {
+          font-size: 20px;
+    }
+        .margin {
+          background-color: yellow;
+          height: 10px;
+          margin-top: 60vh;
+        }
+
+.templatecolum2 {
+  display: grid;
+  gap: 2rem;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.templatecolum2 img {
+  width: 90%;
+  border: 5px solid rgb(196, 222, 196);
+
+
+}
+
+.software {
+ /* position: relative;
+ top: 100px;  */
+ width: 80%;
+ margin: 0px auto;
+
+
+ 
+  
+}
+
+.software img {
+  /* display: block; */
+  /* display: inline-block; */
+  /* position: relative; */
+  
+  width: 100%;
+  /* top: 100px; */
+
+ 
+}
+
+.software h1 {
+  background-color: tomato;
+  color: white;
+  font-size: 18px;
+  width: 100%;
+  
+  display: flex;
+  justify-content: center;
+}
+.templatecolum3 {
+  display: grid;;
+  margin: 20px 2px;
+  gap: 2rem;
+
+}
+.templatecolum3 img {
+  margin: 5px auto;
+  width: 40%;
+  border: 5px solid rgb(242, 187, 214);
+}
+
+.form-order {
+  display: grid;
+}
+
+.form-order h4 {
+  margin: 2px;
+
+}
+
+textarea {
+  /* display: block; */
+  margin: 0px;
+
+}
+
+.googlemap {
+  width: 100%;
+  height: 100%;
+}
+
+input {
+  display: block;
+  margin: 10px 0px;
+}
+
+
+
+
+}
+
+
+@media screen and (max-width: 300px) {
+  .outlined2 {
+    font-size: 18px;
+
+  }
+}
+/* 
+--------------------scroll to top----------------- */
+.top-to-btm {
+  position: relative;
+  background-color: yellow;
+ 
+}
+
+.icon-position {
+  position: fixed;
+  bottom: 40px;
+  right: 2px;
+  z-index: 20;
+}
+.contact-btn {
+  color: white;
+  text-decoration: none;
+}
+
+.icon-style {
+  background-color: #551B54;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  color: #fff;
+  cursor: pointer;
+  animation: movebtn 3s ease-in-out infinite;
+  transition: all .5s ease-in-out;
+}
+
+.icon-style:hover {
+  animation: none;
+  background: #fff;
+  color: #551B54;
+  border: 2px solid #551B54;
+}
+
+@keyframes movebtn {
+  0% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(20px);
+  }
+
+  50% {
+    transform: translateY(0px);
+  }
+
+  75% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

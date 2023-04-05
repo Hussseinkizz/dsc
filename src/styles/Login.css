@@ -1,0 +1,104 @@
+.App {
+    text-align: center;
+    background-color:white;
+    }
+    
+    .label{
+    display:block;
+    font-size: larger;
+    color: grey;
+    padding: 5px;
+    font-size: small;
+    }
+    
+    .input{
+    font-size: larger;
+    padding: 5px;
+    margin: 2px;
+    border-radius:5px;
+    
+    }
+    .btn{
+    color: black;
+    background-color: white;
+    border-radius: 5px;
+    font-size: larger;
+    display: block;
+    padding: 5px;
+    margin: 10px auto;
+    margin-bottom: 20px;
+    }
+    
+    .form{
+      justify-content: center;
+      align-items: center;
+      width: fit-content;
+      margin-top: 2rem;
+    }
+
+    .messages{
+    display: flex;
+    justify-content: center;
+    }
+    
+    .error{
+    display: block;
+    background-color: white;
+    color: red;
+    width: fit-content;
+    height: 50px;
+    padding: 10px;
+    font-size:medium;
+    }
+    
+    .sidguperror{
+      display: block;
+    background-color: white;
+    color:red ;
+    width: fit-content;
+    height: 70px;
+    padding: 5px;
+    font-size:x-small
+    }
+  
+    .signupsuccess{
+      display: block;
+    background-color: white;
+    color: red;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+    font-size:small;
+    }
+    .success{
+    display: block;
+    background-color: white;
+    color:red ;
+    width: fit-content;
+    height: 50px;
+    padding: 5px;
+    font-size:small
+    }
+  
+    .gdcs{
+      font-size:medium;
+    }
+  
+    .logininstead{
+      font-size: small;
+      font-weight: bold;
+      color: lightblue;
+    }
+  
+    .retrntext{
+      font-size:smaller;
+      color: black;
+    }
+  
+    .retrn{
+      text-align: center;
+    background-color:white;
+    width: fit-content;
+    height: 50px;
+    padding: 50px
+    }

@@ -1,0 +1,31 @@
+.projects {
+  display: grid;
+  background: black;
+  color: aliceblue;
+  grid-template-columns: auto auto auto auto;
+  padding: 30px;
+}
+h3 {
+  color: white;
+}
+h3:hover {
+  color: orange;
+}
+button {
+  background-color: #fff;
+  color: black;
+  border-radius: 12px;
+  margin-top: 10px;
+  padding: 15px;
+  justify-content: space-between;
+  gap: 15rem;
+  width: 100px;
+}
+
+img {
+  width: 150px;
+  border-radius: 15px;
+}
+button:hover {
+  background-color: orange;
+}

@@ -1,0 +1,56 @@
+{
+  "users": [
+    {
+      "id": "9d6h7j",
+      "role": "member",
+      "phone": "0712345678",
+      "username": "Alice Smith",
+      "password": "secretpassword",
+      "email": "alice.smith@gmail.com",
+      "dateCreated": "03 April 2023 2:13 AM",
+      "dateModified": "03 April 2023 2:13 AM"
+    },
+    {
+      "id": "4t5y6u",
+      "role": "member",
+      "phone": "0787654321",
+      "username": "Bob Johnson",
+      "password": "123456",
+      "email": "bob.johnson@yahoo.com",
+      "dateCreated": "03 April 2023 3:25 AM",
+      "dateModified": "03 April 2023 3:25 AM"
+    },
+    {
+      "id": "8i9o0p",
+      "role": "admin",
+      "phone": "0765432190",
+      "username": "Emily Nankinga",
+      "password": "mypassword",
+      "email": "emilyn@hotmail.com",
+      "dateCreated": "03 April 2023 4:11 AM",
+      "dateModified": "03 April 2023 4:11 AM"
+    },
+    {
+      "id": "7g6f5d",
+      "role": "member",
+      "phone": "0722222222",
+      "username": "David Lwamitti",
+      "password": "password123",
+      "email": "davidwamitti@gmail.com",
+      "dateCreated": "03 April 2023 5:00 AM",
+      "dateModified": "03 April 2023 5:00 AM"
+    },
+    {
+      "id": "m6rtm9",
+      "role": "admin",
+      "phone": "0704353301",
+      "username": "Kizz Kizz",
+      "password": "1990",
+      "email": "kizz@gmail.com",
+      "dateCreated": "April 3, 2023 at 5:02 AM",
+      "dateModified": "April 3, 2023 at 5:02 AM"
+    }
+  ],
+  "events": [],
+  "projects": []
+}
