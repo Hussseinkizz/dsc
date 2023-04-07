@@ -45,3 +45,4 @@
 ## 06-04-2023 - v1.0.0
 
 - change: Redone project with tailwind!
+- Done: Login & Signup Screens UI & Form Validations Using Zod And React Hook Form
