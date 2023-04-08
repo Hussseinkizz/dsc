@@ -52,3 +52,6 @@
 ## 08-04-2023 - v1.0.0
 
 - Done: Signup page now allows user to signup and get redirected to home screen, afterwards they can access protected routes, their signin or signup state is stored in global state
+- Done: Login page now allows users to signin, we check whether the user exists in users object in DB if yes we redirect them to home screen and allow them access protected routes by checkign thier login state in global state else we tell them to signup.
+- Done: Now In top app bar header, we show link to user account if they're signed in or join community link if they're not, this is consistent even when they refresh page, only the signed user can access the protected route  of user-account!
+- Todo: Provide Log out functionality in user account page!

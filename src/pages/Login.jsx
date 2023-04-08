@@ -1,9 +1,12 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as Icons from 'react-icons/hi';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useState } from 'react';
+import useLocalStorage from '../hooks/useLocalStorage_Lite';
+import useJsonServer from '../hooks/useJsonServer';
+import { reactState } from 'react-hands';
 
 const schema = z.object({
   email: z.string().email('Invalid email').nonempty('Email is required'),
@@ -15,6 +18,17 @@ const schema = z.object({
 
 export default function Login() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
+  const [noUserFound, setNoUserFound] = useState(false);
+
+  // intiate server stuff, backend api
+  const { withCustomQuery } = useJsonServer('http://localhost:5000/users');
+
+  // Initialize the user state using the "user" key in localStorage
+  const { setLocalState } = useLocalStorage('user', null);
+
+  // initialize react hands stuff
+  const { useStore } = reactState();
+  const [state, dispatch] = useStore();
 
   const {
     register,
@@ -24,8 +38,28 @@ export default function Login() {
     resolver: zodResolver(schema),
   });
 
+  // react router stuff
+  let navigate = useNavigate();
+
   const handleSignin = (data) => {
-    console.log('signing in....', data);
+    // get user inputs, username and password, check if any user has them in users in db, if yes, set that as signed user in state else tell user to signup
+
+    let queryString = `?email=${data.email}&password=${data.password}`;
+
+    withCustomQuery(queryString).then((foundUsers) => {
+      console.log(foundUsers);
+      if (foundUsers.length !== 0) {
+        // set user in local state, global state will pick it from there!
+        setLocalState('user', foundUsers[0]);
+        // then set that user in global state
+        dispatch({ type: 'setUser', payload: foundUsers[0] });
+        // then redirect to home screen
+        return navigate('/');
+      } else {
+        setNoUserFound(true);
+        console.log('Not Found', data);
+      }
+    });
   };
 
   return (
@@ -82,6 +116,11 @@ export default function Login() {
             </div>
             {errors.password && (
               <p className="text-red-500 mt-2">{errors.password.message}</p>
+            )}
+            {noUserFound && (
+              <p className="text-red-500 mt-2">
+                No Such Account, Please Signup Instead!
+              </p>
             )}
           </div>
           <button

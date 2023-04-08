@@ -24,7 +24,7 @@ const schema = z.object({
     .nonempty('Password is required'),
 });
 
-export default function Login() {
+export default function Signup() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
   // intiate server stuff, backend api
@@ -68,7 +68,7 @@ export default function Login() {
   // function that gets user data from form and creates the user db.json using useJsonServer hook then redirects user to homescreen if signup successful!
   let navigate = useNavigate();
 
-  const handleSignin = (data) => {
+  const handleSignup = (data) => {
     // generate a new user and unique user Id
     let newUniqueUserId = nanoid(6); // 6 = size of id
 
@@ -110,7 +110,7 @@ export default function Login() {
             </h3>
           </div>
         </div>
-        <form onSubmit={handleSubmit(handleSignin)} className="mt-8 space-y-5">
+        <form onSubmit={handleSubmit(handleSignup)} className="mt-8 space-y-5">
           <div>
             <label className="font-medium">Username</label>
             <input

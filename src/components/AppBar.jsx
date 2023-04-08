@@ -1,9 +1,32 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import * as Icons from 'react-icons/hi';
+import useLocalStorage from '../hooks/useLocalStorage_Lite';
+import { reactState } from 'react-hands';
 
 export default function AppBar() {
   const [isExpanded, setIsExpanded] = useState(false);
+
+  // Note: this component immediately on page load gets the loggedin user, and displays button to thier account if they're loggedin else it shows join community button. It maintains this even after page refresh or browser close and open, it first reads the state in local sotrage sets it to global state and maintains it
+
+  // Initialize the user state using the "user" key in localStorage
+  const { getLocalState } = useLocalStorage('user', null);
+
+  // initialize react hands stuff
+  const { useStore } = reactState();
+  const [state, dispatch] = useStore();
+
+  // get localStorage value on page load
+  useEffect(() => {
+    getSetUser();
+  }, []);
+
+  // function defined outside useEffect to prevent renders
+  function getSetUser() {
+    const storedUser = getLocalState('user');
+    // console.log(storedUser, state);
+    dispatch({ type: 'setUser', payload: storedUser });
+  }
 
   // Replace javascript:void(0) path with your path
   const navigation = [
@@ -73,11 +96,19 @@ export default function AppBar() {
         </div>
         <div className="hidden md:inline-block">
           {/* Show Account If User Signed In */}
-          <Link
-            to="/signup"
-            className="py-3 px-4 text-white font-semibold bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 hover:opacity-90 transition ease-linear rounded-md active:scale-90 will-change-auto shadow">
-            Join Community
-          </Link>
+          {state.user ? (
+            <Link
+              to="/user-account"
+              className="py-3 px-4 text-white font-semibold bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 hover:opacity-90 transition ease-linear rounded-md active:scale-90 will-change-auto shadow">
+              Your Account
+            </Link>
+          ) : (
+            <Link
+              to="/signup"
+              className="py-3 px-4 text-white font-semibold bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 hover:opacity-90 transition ease-linear rounded-md active:scale-90 will-change-auto shadow">
+              Join Community
+            </Link>
+          )}
         </div>
       </div>
     </nav>
