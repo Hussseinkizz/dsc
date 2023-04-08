@@ -74,7 +74,7 @@ export default function AppBar() {
         <div className="hidden md:inline-block">
           {/* Show Account If User Signed In */}
           <Link
-            to="/login"
+            to="/signup"
             className="py-3 px-4 text-white font-semibold bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500 hover:opacity-90 transition ease-linear rounded-md active:scale-90 will-change-auto shadow">
             Join Community
           </Link>

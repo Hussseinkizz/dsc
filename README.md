@@ -11,14 +11,35 @@
 
 ### Others
 
-- Open Gp
+- Open Gp, Email Js
 - Chart Js
 - React Circular Progressbar
 - React Roouter Dom
 - React Hands
 - Sass
+- Zod
+- React Hook Form
+- Tailwind CSS
+- Json Server
 
 ## Notes
 
-- db.json data is all dummy for now
-- react router is not installed and collected
+To Start Application, Do 2 Things,
+
+1.Start Backend Server, run follwing command in terminal
+
+```bash
+yarn server
+```
+
+2.Start Frontend Server, run follwing command in terminal
+
+```bash
+yarn dev
+```
+
+To Build For Deployment
+
+```bash
+yarn build
+```

@@ -1,10 +1,15 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as Icons from 'react-icons/hi';
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { reactState } from 'react-hands';
+import useLocalStorage from '../hooks/useLocalStorage_Lite';
+import useJsonServer from '../hooks/useJsonServer';
+import { nanoid } from 'nanoid';
 
+// define the form validation schema, what should be what!
 const schema = z.object({
   email: z.string().email('Invalid email').nonempty('Email is required'),
   username: z.string().nonempty('Username is required'),
@@ -22,6 +27,36 @@ const schema = z.object({
 export default function Login() {
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
+  // intiate server stuff, backend api
+  const { create } = useJsonServer('http://localhost:5000/users');
+
+  // Initialize the user state using the "user" key in localStorage
+  const { setLocalState } = useLocalStorage('user', null);
+
+  // initialize react hands stuff
+  const { useStore } = reactState();
+  const [state, dispatch] = useStore();
+
+  // helper fucntion to get current time in desired format
+  function timeFormatter() {
+    const date = new Date();
+
+    const options = {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: true,
+    };
+    const formattedDate = new Intl.DateTimeFormat('en-US', options).format(
+      date
+    );
+    // console.log(formattedDate); // output: "3 April 2023 2:13 AM"
+    return formattedDate;
+  }
+
+  // intialize react hook form stuff
   const {
     register,
     handleSubmit,
@@ -30,8 +65,35 @@ export default function Login() {
     resolver: zodResolver(schema),
   });
 
+  // function that gets user data from form and creates the user db.json using useJsonServer hook then redirects user to homescreen if signup successful!
+  let navigate = useNavigate();
+
   const handleSignin = (data) => {
-    console.log('signing in....', data);
+    // generate a new user and unique user Id
+    let newUniqueUserId = nanoid(6); // 6 = size of id
+
+    let newUser = {
+      id: newUniqueUserId,
+      role: 'member',
+      phone: data.phone,
+      username: data.username,
+      password: data.password,
+      email: data.email,
+      dateCreated: timeFormatter(),
+      dateModified: timeFormatter(),
+    };
+    // create user in DB
+    create(newUser).then((user) => {
+      // console.log(user);
+      // set user in local state, global state will pick it from there!
+      setLocalState('user', user);
+      // then set that user in global state
+      dispatch({ type: 'setUser', payload: user });
+      // then redirect to home screen
+      if (user) {
+        return navigate('/');
+      }
+    });
   };
 
   return (
@@ -78,7 +140,7 @@ export default function Login() {
           <div>
             <label className="font-medium">Phone</label>
             <input
-              type="text"
+              type="tel"
               {...register('phone')}
               className={`w-full mt-2 px-3 py-2 text-gray-500 bg-transparent outline-none border focus:border-indigo-600 shadow-sm rounded-lg ${
                 errors.phone ? 'border-red-500' : 'border-gray-300'
@@ -119,7 +181,7 @@ export default function Login() {
           <button
             className="w-full px-4 py-2 text-white font-medium bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-600 active:scale-95 transition ease-linear rounded-lg duration-150"
             type="submit">
-            Sign in
+            Sign up
           </button>
           <div className="w-full flex flex-col justify-between items-center gap-4 text-center">
             <p className="flex gap-2">

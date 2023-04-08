@@ -46,3 +46,9 @@
 
 - change: Redone project with tailwind!
 - Done: Login & Signup Screens UI & Form Validations Using Zod And React Hook Form
+- Todo: Login & signup Backend
+- Fix: Carousel Not SLiding
+
+## 08-04-2023 - v1.0.0
+
+- Done: Signup page now allows user to signup and get redirected to home screen, afterwards they can access protected routes, their signin or signup state is stored in global state

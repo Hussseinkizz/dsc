@@ -7,7 +7,7 @@ export default function BlogCards() {
       authorLogo: 'https://api.uifaces.co/our-content/donated/xZ4wg2Xj.jpg',
       authorName: 'Sidi dev',
       date: 'Jan 4 2022',
-      href: 'javascript:void(0)',
+      href: '#',
     },
     {
       title: 'A Quick Guide to WordPress Hosting',
@@ -16,7 +16,7 @@ export default function BlogCards() {
       authorLogo: 'https://api.uifaces.co/our-content/donated/FJkauyEa.jpg',
       authorName: 'Micheal',
       date: 'Jan 4 2022',
-      href: 'javascript:void(0)',
+      href: '#',
     },
     {
       title: '7 Promising VS Code Extensions Introduced in 2022',
@@ -25,7 +25,7 @@ export default function BlogCards() {
       authorLogo: 'https://randomuser.me/api/portraits/men/46.jpg',
       authorName: 'Luis',
       date: 'Jan 4 2022',
-      href: 'javascript:void(0)',
+      href: '#',
     },
     {
       title: 'How to Use Root C++ Interpreter Shell to Write C++ Programs',
@@ -34,19 +34,19 @@ export default function BlogCards() {
       authorLogo: 'https://api.uifaces.co/our-content/donated/KtCFjlD4.jpg',
       authorName: 'Lourin',
       date: 'Jan 4 2022',
-      href: 'javascript:void(0)',
+      href: '#',
     },
   ];
 
   return (
     <section className="mt-12 --mx-auto px-4 w-full md:px-8">
       <div className="text-center">
-        <h1 className="text-3xl text-gray-800 font-semibold">Blog</h1>
+        <h1 className="text-3xl text-gray-800 font-semibold">Community Blog</h1>
         <p className="mt-3 text-gray-500">
           Blogs that are loved by the community. Updated every hour.
         </p>
       </div>
-      <div className="mt-12 grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mt-12 w-3/5 mx-auto grid gap-2 md:gap-4 sm:grid-cols-2 --lg:grid-cols-3">
         {posts.map((items, key) => (
           <article
             className="--max-w-md --mx-auto mt-4 shadow-lg border rounded-md duration-300 hover:shadow-sm"

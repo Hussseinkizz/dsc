@@ -1,6 +1,6 @@
 import './styles/index.css';
 // import './styles/Auth.css'; // renamed from j's App.css
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
 // import Projects from './pages/Projects';
 // import Events from './pages/Events';
@@ -28,6 +28,7 @@ function App() {
           <Route path="/forget-password" element={<ForgotPassword />} />
           {/* <Route path="/admin-dashboard" element={<MainLayout />} />
         <Route path="/dashboard" element={<Dashboard />} /> */}
+            <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
     </Layout>
   );

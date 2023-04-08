@@ -1,12 +1,17 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 
+// notes:
+// the data has latest data only on inital call of the hook,
+// for the rest of the tiem it will ahve a cache of the most recent data not exactly the data in DB at that time, but the data that was in DB before that!
+// either make it have latest data or make each hook method return it's response data there and then!
+
 const useJsonServer = (resourceUrl) => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
     fetchAll();
-  }, []);
+  }, [resourceUrl]);
 
   const fetchAll = async () => {
     try {
@@ -16,11 +21,21 @@ const useJsonServer = (resourceUrl) => {
       console.error(error);
     }
   };
+  const get = async () => {
+    try {
+      const response = await axios.get(resourceUrl);
+      setData(response.data);
+      return response.data;
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   const create = async (newData) => {
     try {
       const response = await axios.post(resourceUrl, newData);
       setData([...data, response.data]);
+      return response.data;
     } catch (error) {
       console.error(error);
     }
@@ -33,6 +48,7 @@ const useJsonServer = (resourceUrl) => {
       const updatedArray = [...data];
       updatedArray[updatedIndex] = response.data;
       setData(updatedArray);
+      return updatedArray;
     } catch (error) {
       console.error(error);
     }
@@ -43,6 +59,7 @@ const useJsonServer = (resourceUrl) => {
       await axios.delete(`${resourceUrl}/${id}`);
       const filteredArray = data.filter((item) => item.id !== id);
       setData(filteredArray);
+      return filteredArray;
     } catch (error) {
       console.error(error);
     }
@@ -52,12 +69,13 @@ const useJsonServer = (resourceUrl) => {
     try {
       const response = await axios.get(`${resourceUrl}/?${property}=${query}`);
       setData(response.data);
+      return response.data;
     } catch (error) {
       console.error(error);
     }
   };
 
-  return { data, create, update, remove, filter };
+  return { data, get, create, update, remove, filter };
 };
 
 export default useJsonServer;
