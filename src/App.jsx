@@ -2,8 +2,8 @@ import './styles/index.css';
 // import './styles/Auth.css'; // renamed from j's App.css
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';
-// import Projects from './pages/Projects';
-// import Events from './pages/Events';
+import Projects from './pages/Projects';
+import Events from './pages/Events';
 import Layout from './components/Layout';
 // import SampleLogin from './pages/SampleLogin';
 import Signup from './pages/Signup';
@@ -19,8 +19,8 @@ function App() {
     <Layout>
         <Routes>
           <Route index path="/" element={<Home />} />
-          {/* <Route path="/projects" element={<Projects />} /> */}
-          {/* <Route path="/events" element={<Events />} /> */}
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/events" element={<Events />} />
           {/* <Route path="/sampleLogin" element={<SampleLogin />} /> */}
           <Route path="/signup" element={<Signup />} />
           {/* <Route path="/auth" element={<Auth />} /> */}
