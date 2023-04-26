@@ -46,14 +46,6 @@ export default function AppBar() {
     { title: 'Projects', path: '/projects' },
   ];
 
-  // protect Route in that it redirects if no user logged in
-  useEffect(() => {
-    let storedUser = getLocalState('user');
-    if (storedUser === null || (storedUser === undefined && !storedUser)) {
-      return navigate('/');
-    }
-  }, []);
-
   return (
     <nav className="bg-slate-900 text-slate-50 w-full border-b md:border-0 md:static shadow">
       <div className="items-center px-4 max-w-screen-xl mx-auto md:flex md:px-8">

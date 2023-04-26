@@ -2,8 +2,25 @@ import React, { useEffect, useState } from 'react';
 import AppBar from '../components/AppBar';
 import { reactState } from 'react-hands';
 import * as Icons from 'react-icons/hi';
+import { useNavigate } from 'react-router-dom';
+import useLocalStorage from '../hooks/useLocalStorage_Lite';
 
 const UserAccount = () => {
+  // Note: this component immediately on page load gets the loggedin user, and displays button to thier account if they're loggedin else it shows join community button. It maintains this even after page refresh or browser close and open, it first reads the state in local sotrage sets it to global state and maintains it
+
+  // Initialize the user state using the "user" key in localStorage
+  const { getLocalState, removeLocalState } = useLocalStorage('user', null);
+
+  let navigate = useNavigate();
+
+  // protect Route in that it redirects if no user logged in
+  useEffect(() => {
+    let storedUser = getLocalState('user');
+    if (storedUser === null || (storedUser === undefined && !storedUser)) {
+      return navigate('/');
+    }
+  }, []);
+
   // initialize react hands stuff
   const { useStore } = reactState();
   const [state, dispatch] = useStore();
@@ -17,7 +34,7 @@ const UserAccount = () => {
 
   // get current user from state
   let user = state?.user;
-  let userInitials = getInitials(user.username);
+  let userInitials = getInitials(user?.username);
 
   const userInfo = [
     {
@@ -37,7 +54,7 @@ const UserAccount = () => {
     },
     {
       item: 'password',
-      data: user.password.split('').map((key) => '*'),
+      data: user?.password.split('').map((key) => '*'),
       icon: <Icons.HiKey className="w-5 h-5" />,
     },
   ];
@@ -51,7 +68,7 @@ const UserAccount = () => {
             <span className="p-4 rounded-full grid place-items-center text-white font-semibold bg-gradient-to-r from-rose-400 via-fuchsia-500 to-indigo-500">
               {userInitials}
             </span>
-            <span className="flex">{user.username}</span>
+            <span className="flex">{user?.username}</span>
           </div>
           {/* The Profile Edit Button */}
           <button className="flex px-4 py-2 rounded-lg bg-purple-300 justify-center items-center gap-2 transition ease-linear hover:bg-purple-200">
