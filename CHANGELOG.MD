@@ -55,3 +55,10 @@
 - Done: Login page now allows users to signin, we check whether the user exists in users object in DB if yes we redirect them to home screen and allow them access protected routes by checkign thier login state in global state else we tell them to signup.
 - Done: Now In top app bar header, we show link to user account if they're signed in or join community link if they're not, this is consistent even when they refresh page, only the signed user can access the protected route  of user-account!
 - Todo: Provide Log out functionality in user account page!
+
+## 26-04-2023 - v1.0.0
+
+- Done: Added Log out functionality in user account page!
+- Done: Made use account page a protected route
+- Done: Designed the projects, and community pages
+- Done: Code clean up and re-factoring!
